@@ -1,0 +1,102 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#wrapper{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* we have to define the value of perspective to
+    work with 3D transition or transform to do that we need to
+    On perspective.(by assign value) 
+    ->perspective: defines the distane(logical) between user's eye
+    and html elements */
+    perspective: 10px;
+}
+
+.container{
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* we have to explicitily define transform-style porpertics
+    to prserve the 3D transform */
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+.background
+{
+    transform: translateZ(-30px) scale(4);
+}
+.foreground{
+    transform: translateZ(-10px) scale(2);
+}
+.foreground,.background{
+    position: absolute;
+    height: 100vh;
+    width:100vw;
+    /* 
+    Object-fit: property is used to specify how an <img>
+    or <video> should be resized to fit its container
+     */
+    object-fit: cover;
+    z-index: -1;
+    
+}
+h1{
+    position: absolute;
+    color:rgb(250, 250, 246);
+    top:5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 2px ;
+    font-size: 5rem;
+    text-shadow: 0 0 10px cornflowerblue;
+}
+section{
+    background-color:rgb(26, 25, 25);
+    color:azure;
+    padding:5rem 0;
+}
+.heading{
+    font-size: 3rem;
+    padding: 0 3rem;
+    color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+}
+.bg{
+   position: relative;
+   width: 100%;
+   height: 500px;
+   background-position: center;/* to position background at center*/
+   background-size: cover;/* similar to object-fit property*/
+   /* to make background fixed so background doesn't move
+   and content overlap the background. */
+   background-attachment: fixed;
+}
+.bg1{
+    background-image: url(img/book.jpg);
+}
+.bg2{
+    background-image: url(img/nature2.jpg);
+}
+.bg3{
+    background-image: url(img/meditation.jpg);
+}
+.text
+{
+    color:azure;
+    font-size: 1.5rem;
+    margin:2rem;
+    padding:0rem;
+
+}
+.heading2{
+    font-size: 2rem;
+    margin: 0 2rem;
+}
